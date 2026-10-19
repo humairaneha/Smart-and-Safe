@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" role="img" aria-label="Animated simulation: an admin checks two pending ads. The first phone's IMEI pair has no match in the stolen registry and the ad is approved; the second phone's IMEI pair matches a reported row and the ad is rejected.">
+  <defs>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .scA { animation: scA 12s infinite; }
+      .scB { animation: scB 12s infinite; }
+      @keyframes scA { 0%, 46% { opacity: 1; } 49%, 97% { opacity: 0; } 100% { opacity: 1; } }
+      @keyframes scB { 0%, 46% { opacity: 0; } 49%, 97% { opacity: 1; } 100% { opacity: 0; } }
+
+      .packet { animation: packet 12s infinite; }
+      @keyframes packet {
+        0%, 8%   { transform: translateX(0);     opacity: 0; }
+        9%       { transform: translateX(0);     opacity: 1; }
+        19%      { transform: translateX(196px); opacity: 1; }
+        20%      { transform: translateX(196px); opacity: 0; }
+        57%      { transform: translateX(0);     opacity: 0; }
+        58%      { transform: translateX(0);     opacity: 1; }
+        68%      { transform: translateX(196px); opacity: 1; }
+        69%, 100%{ transform: translateX(196px); opacity: 0; }
+      }
+
+      .scan { animation: scan 12s infinite; }
+      @keyframes scan {
+        0%, 19% { opacity: 0; transform: translateY(0); }
+        20%     { opacity: 1; transform: translateY(0); }
+        24%     { transform: translateY(0); }
+        26%     { transform: translateY(38px); }
+        30%     { transform: translateY(38px); }
+        32%     { transform: translateY(76px); }
+        35%     { transform: translateY(76px); }
+        37%     { transform: translateY(114px); opacity: 1; }
+        40%     { transform: translateY(114px); opacity: 1; }
+        42%     { transform: translateY(114px); opacity: 0; }
+        69%     { opacity: 0; transform: translateY(0); }
+        70%     { opacity: 1; transform: translateY(0); }
+        74%     { transform: translateY(0); }
+        76%     { transform: translateY(38px); }
+        79%     { transform: translateY(38px); }
+        81%     { transform: translateY(76px); opacity: 1; }
+        82%, 100% { transform: translateY(76px); opacity: 0; }
+      }
+      .hit { animation: hit 12s infinite; }
+      @keyframes hit { 0%, 81% { opacity: 0; } 83%, 97% { opacity: 1; } 99%, 100% { opacity: 0; } }
+
+      .ok  { animation: ok 12s infinite; }
+      @keyframes ok  { 0%, 40% { opacity: 0; } 42%, 46% { opacity: 1; } 48%, 100% { opacity: 0; } }
+      .bad { animation: bad 12s infinite; }
+      @keyframes bad { 0%, 83% { opacity: 0; } 85%, 97% { opacity: 1; } 99%, 100% { opacity: 0; } }
+
+      .pendA { animation: pendA 12s infinite; }
+      @keyframes pendA { 0%, 42% { opacity: 1; } 43%, 97% { opacity: 0; } 100% { opacity: 1; } }
+      .apprA { animation: apprA 12s infinite; }
+      @keyframes apprA { 0%, 42% { opacity: 0; } 43%, 46% { opacity: 1; } 48%, 100% { opacity: 0; } }
+      .pendB { animation: pendB 12s infinite; }
+      @keyframes pendB { 0%, 48% { opacity: 0; } 49%, 86% { opacity: 1; } 87%, 100% { opacity: 0; } }
+      .rejB { animation: rejB 12s infinite; }
+      @keyframes rejB { 0%, 86% { opacity: 0; } 87%, 97% { opacity: 1; } 99%, 100% { opacity: 0; } }
+    </style>
+  </defs>
+
+  <rect width="900" height="400" rx="16" fill="#0f172a"/>
+  <text x="32" y="42" font-size="20" font-weight="700" fill="#f1f5f9">Simulation: admin clicks “Check” on a pending ad</text>
+  <text class="scA" x="868" y="42" font-size="15" text-anchor="end" fill="#86efac">Scenario 1 · clean phone</text>
+  <text class="scB" x="868" y="42" font-size="15" text-anchor="end" fill="#fca5a5">Scenario 2 · reported stolen</text>
+
+  <!-- Phone (the ad being reviewed) -->
+  <rect x="40" y="70" width="190" height="300" rx="22" fill="#1e293b" stroke="#64748b" stroke-width="3"/>
+  <rect x="54" y="92" width="162" height="250" rx="8" fill="#0b1222"/>
+  <text x="135" y="120" font-size="13" text-anchor="middle" fill="#94a3b8">sell_post (ad)</text>
+  <g class="scA">
+    <text x="135" y="150" font-size="17" font-weight="700" text-anchor="middle" fill="#f1f5f9">Samsung A52</text>
+    <text x="68" y="186" font-size="12" fill="#94a3b8">IMEI 1</text>
+    <text class="mono" x="68" y="204" font-size="14" fill="#e2e8f0">356938035643809</text>
+    <text x="68" y="232" font-size="12" fill="#94a3b8">IMEI 2</text>
+    <text class="mono" x="68" y="250" font-size="14" fill="#e2e8f0">356938035643817</text>
+  </g>
+  <g class="scB">
+    <text x="135" y="150" font-size="17" font-weight="700" text-anchor="middle" fill="#f1f5f9">iPhone 12</text>
+    <text x="68" y="186" font-size="12" fill="#94a3b8">IMEI 1</text>
+    <text class="mono" x="68" y="204" font-size="14" fill="#e2e8f0">490154203237518</text>
+    <text x="68" y="232" font-size="12" fill="#94a3b8">IMEI 2</text>
+    <text class="mono" x="68" y="250" font-size="14" fill="#e2e8f0">490154203237526</text>
+  </g>
+  <text x="68" y="290" font-size="12" fill="#94a3b8">status</text>
+  <g font-size="13" font-weight="700">
+    <g class="pendA"><rect x="68" y="298" width="96" height="26" rx="13" fill="#78350f"/><text x="116" y="316" text-anchor="middle" fill="#fde68a">Pending</text></g>
+    <g class="apprA"><rect x="68" y="298" width="96" height="26" rx="13" fill="#14532d"/><text x="116" y="316" text-anchor="middle" fill="#bbf7d0">Approved</text></g>
+    <g class="pendB"><rect x="68" y="298" width="96" height="26" rx="13" fill="#78350f"/><text x="116" y="316" text-anchor="middle" fill="#fde68a">Pending</text></g>
+    <g class="rejB"><rect x="68" y="298" width="96" height="26" rx="13" fill="#7f1d1d"/><text x="116" y="316" text-anchor="middle" fill="#fecaca">Rejected</text></g>
+  </g>
+
+  <!-- Query -->
+  <text class="mono" x="342" y="196" font-size="11" text-anchor="middle" fill="#93c5fd">SELECT * FROM Imei</text>
+  <text class="mono" x="342" y="212" font-size="11" text-anchor="middle" fill="#93c5fd">WHERE imei1=… AND imei2=…</text>
+  <line x1="246" y1="232" x2="440" y2="232" stroke="#334155" stroke-width="3" stroke-dasharray="6 6"/>
+  <path d="M440 232 l-10 -6 v12 z" fill="#334155"/>
+  <circle class="packet" cx="246" cy="232" r="8" fill="#60a5fa"/>
+
+  <!-- Stolen registry -->
+  <rect x="456" y="70" width="412" height="230" rx="12" fill="#111c33" stroke="#334155" stroke-width="2"/>
+  <text x="474" y="98" font-size="15" font-weight="700" fill="#f1f5f9">Imei table</text>
+  <text x="560" y="98" font-size="13" fill="#94a3b8">· phones reported lost/stolen</text>
+  <g font-size="12" font-weight="700" fill="#94a3b8">
+    <text x="474" y="128">imei1</text><text x="626" y="128">imei2</text><text x="786" y="128">gd_no</text>
+  </g>
+  <line x1="466" y1="138" x2="858" y2="138" stroke="#334155"/>
+
+  <rect class="scan" x="464" y="142" width="396" height="34" rx="6" fill="#1d4ed8" opacity="0"/>
+  <rect class="hit" x="464" y="218" width="396" height="34" rx="6" fill="#b91c1c" opacity="0"/>
+
+  <g class="mono" font-size="13" fill="#e2e8f0">
+    <text x="474" y="164">353918059024125</text><text x="626" y="164">353918059024133</text><text x="786" y="164">GD-0841</text>
+    <text x="474" y="202">867530021954362</text><text x="626" y="202">867530021954370</text><text x="786" y="202">GD-0977</text>
+    <text x="474" y="240">490154203237518</text><text x="626" y="240">490154203237526</text><text x="786" y="240">GD-1172</text>
+    <text x="474" y="278">359881030314356</text><text x="626" y="278">359881030314364</text><text x="786" y="278">GD-1305</text>
+  </g>
+
+  <!-- Results -->
+  <g class="ok">
+    <rect x="456" y="318" width="412" height="52" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+    <text x="662" y="350" font-size="17" font-weight="700" text-anchor="middle" fill="#dcfce7">✓ No match found: safe to approve</text>
+  </g>
+  <g class="bad">
+    <rect x="456" y="318" width="412" height="52" rx="12" fill="#7f1d1d" stroke="#ef4444" stroke-width="2"/>
+    <text x="662" y="350" font-size="17" font-weight="700" text-anchor="middle" fill="#fee2e2">⚠ MATCH FOUND: reported stolen, decline</text>
+  </g>
+</svg>

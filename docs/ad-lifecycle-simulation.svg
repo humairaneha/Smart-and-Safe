@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360" role="img" aria-label="Animated simulation of an ad's lifecycle: the seller submits the sell form, the ad is stored as Pending, the admin checks the IMEI and approves it, and the ad appears on the public Buy page.">
+  <defs>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .card { animation: move 10s infinite; }
+      @keyframes move {
+        0%       { transform: translateX(0);     opacity: 0; }
+        3%, 15%  { transform: translateX(0);     opacity: 1; }
+        20%, 40% { transform: translateX(220px); opacity: 1; }
+        45%, 65% { transform: translateX(440px); opacity: 1; }
+        70%, 93% { transform: translateX(660px); opacity: 1; }
+        97%, 100%{ transform: translateX(660px); opacity: 0; }
+      }
+      .s1 { animation: s1 10s infinite; } @keyframes s1 { 0%, 16% { opacity: 1; } 17%, 100% { opacity: 0; } }
+      .s2 { animation: s2 10s infinite; } @keyframes s2 { 0%, 16% { opacity: 0; } 17%, 41% { opacity: 1; } 42%, 100% { opacity: 0; } }
+      .s3 { animation: s3 10s infinite; } @keyframes s3 { 0%, 41% { opacity: 0; } 42%, 66% { opacity: 1; } 67%, 100% { opacity: 0; } }
+      .s4 { animation: s4 10s infinite; } @keyframes s4 { 0%, 66% { opacity: 0; } 67%, 100% { opacity: 1; } }
+      .lane1 { animation: l1 10s infinite; } @keyframes l1 { 0%, 16% { stroke: #60a5fa; } 18%, 100% { stroke: #334155; } }
+      .lane2 { animation: l2 10s infinite; } @keyframes l2 { 0%, 18% { stroke: #334155; } 20%, 41% { stroke: #60a5fa; } 43%, 100% { stroke: #334155; } }
+      .lane3 { animation: l3 10s infinite; } @keyframes l3 { 0%, 43% { stroke: #334155; } 45%, 66% { stroke: #60a5fa; } 68%, 100% { stroke: #334155; } }
+      .lane4 { animation: l4 10s infinite; } @keyframes l4 { 0%, 68% { stroke: #334155; } 70%, 95% { stroke: #60a5fa; } 97%, 100% { stroke: #334155; } }
+      .chk { animation: chk 10s infinite; } @keyframes chk { 0%, 54% { opacity: 0; } 56%, 66% { opacity: 1; } 68%, 100% { opacity: 0; } }
+    </style>
+  </defs>
+
+  <rect width="900" height="360" rx="16" fill="#0f172a"/>
+  <text x="32" y="40" font-size="20" font-weight="700" fill="#f1f5f9">Simulation: life of a “Sell” ad</text>
+
+  <!-- Lanes -->
+  <g fill="#111c33" stroke-width="2">
+    <rect class="lane1" x="20"  y="60" width="200" height="200" rx="12"/>
+    <rect class="lane2" x="240" y="60" width="200" height="200" rx="12"/>
+    <rect class="lane3" x="460" y="60" width="200" height="200" rx="12"/>
+    <rect class="lane4" x="680" y="60" width="200" height="200" rx="12"/>
+  </g>
+  <g font-size="14" font-weight="700" fill="#cbd5e1" text-anchor="middle">
+    <text x="120" y="86">① Seller · Sell form</text>
+    <text x="340" y="86">② Pending review</text>
+    <text x="560" y="86">③ Admin · Ad details</text>
+    <text x="780" y="86">④ Buy page (public)</text>
+  </g>
+  <g font-size="11" fill="#64748b" text-anchor="middle">
+    <text x="120" y="250">WebForm2.aspx</text>
+    <text x="340" y="250">reviewpost.aspx</text>
+    <text x="560" y="250">WebForm3.aspx?id=…</text>
+    <text x="780" y="250">Buy.aspx / WebForm4.aspx</text>
+  </g>
+  <g class="chk">
+    <rect x="490" y="268" width="140" height="22" rx="11" fill="#14532d"/>
+    <text x="560" y="283" font-size="12" font-weight="700" text-anchor="middle" fill="#bbf7d0">IMEI: no match ✓</text>
+  </g>
+
+  <!-- Moving ad card -->
+  <g class="card">
+    <rect x="40" y="102" width="160" height="128" rx="10" fill="#1e293b" stroke="#475569"/>
+    <rect x="52" y="112" width="136" height="44" rx="6" fill="#334155"/>
+    <rect x="108" y="117" width="24" height="34" rx="4" fill="#0f172a" stroke="#94a3b8"/>
+    <text x="52" y="174" font-size="13" font-weight="700" fill="#f1f5f9">Xiaomi Redmi Note 10</text>
+    <text x="52" y="192" font-size="12" fill="#94a3b8">Asking ৳14,500</text>
+    <g font-size="11" font-weight="700" text-anchor="middle">
+      <g class="s1"><rect x="52" y="200" width="100" height="20" rx="10" fill="#334155"/><text x="102" y="214" fill="#e2e8f0">Draft</text></g>
+      <g class="s2"><rect x="52" y="200" width="100" height="20" rx="10" fill="#78350f"/><text x="102" y="214" fill="#fde68a">Pending</text></g>
+      <g class="s3"><rect x="52" y="200" width="100" height="20" rx="10" fill="#1e3a8a"/><text x="102" y="214" fill="#bfdbfe">Under review</text></g>
+      <g class="s4"><rect x="52" y="200" width="100" height="20" rx="10" fill="#14532d"/><text x="102" y="214" fill="#bbf7d0">Approved</text></g>
+    </g>
+  </g>
+
+  <!-- Caption -->
+  <g font-size="15" fill="#e2e8f0">
+    <text class="s1" x="32" y="318">Seller fills in brand, model, IMEI 1 &amp; 2, prices, NID scans, purchase memo and photos.</text>
+    <text class="s2" x="32" y="318">Saved to <tspan fill="#93c5fd">sell_post</tspan> with status = 'Pending'. Admin filters pending ads on Review Post.</text>
+    <text class="s3" x="32" y="318">Admin views NID + memo, clicks Check (IMEI vs. stolen registry), then Approve or Decline.</text>
+    <text class="s4" x="32" y="318">status = 'Approved': ad is listed on the Buy page and shows up in brand/model search.</text>
+  </g>
+  <text x="32" y="342" font-size="12" fill="#64748b">If the seller edits the ad later, it goes back to 'pending' and has to be reviewed again.</text>
+</svg>
